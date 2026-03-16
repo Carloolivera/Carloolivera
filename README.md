@@ -17,24 +17,24 @@
 
 Soy co-founder de **AIDO Digital Agency** desde Chascomús, Buenos Aires.
 
-Construyo productos digitales reales para negocios locales usando **100% vibecoding** — Claude Code, Cursor, Antigravity y lo que venga. Sin escribir código manual. La IA escribe, yo dirijo.
+Construyo productos digitales reales para negocios locales usando **100% vibecoding** — la IA escribe, yo dirijo. Sin escribir código manual.
 
 > *"El mejor código es el que no escribís vos."*
 
 ---
 
-## Herramientas que uso para vibecoding
+## Cómo desarrollo
 
 <div align="center">
 
-| Herramienta | Uso |
-|:-:|:-:|
-| <img src="https://img.shields.io/badge/Claude_Code-CC785C?style=flat-square&logo=anthropic&logoColor=white" /> | Motor principal de desarrollo |
-| <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" /> | IDE con IA integrada |
-| <img src="https://img.shields.io/badge/v0.dev-000?style=flat-square&logo=vercel&logoColor=white" /> | Prototipos de UI |
-| <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" /> | Motor secundario (Gemini) |
+| Motor | Herramienta | IA |
+|:-:|:-:|:-:|
+| 🥇 **Principal** | <img src="https://img.shields.io/badge/Claude_Code-CC785C?style=flat-square&logo=anthropic&logoColor=white" /> | Claude Sonnet/Opus |
+| 🥈 **Secundario** | <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" /> | Claude + Gemini 2.5 Pro |
 
 </div>
+
+Dos motores, un objetivo: **shippear rápido sin tocar código**.
 
 ---
 
@@ -70,10 +70,6 @@ Plataforma de **gestión de turnos** para profesionales de salud y estética.
 Dashboard completo: servicios, horarios, agenda, booking público.
 `Next.js 16` · `Prisma 7` · `Neon` · `NextAuth v5`
 
-### ✂️ barberia-cobran — [barberia-cobran.vercel.app](https://barberia-cobran.vercel.app)
-Sistema de **reservas online** para barbería. El cliente elige día, hora y servicio sin llamar.
-`Next.js 16` · `Prisma 7` · `Neon` · `NextAuth v5`
-
 ### 🍕 aido-menu — [prueba.solutions](https://prueba.solutions)
 **Menú digital + pedidos online** para pizzería. En producción real para Lo de Mau (Chascomús).
 `Laravel 12` · `MySQL` · `Hostinger`
@@ -84,15 +80,21 @@ MVP de reservas **multi-vertical**: estética, spa, odonto, fitness, tatuajes.
 
 ---
 
-## Portfolio abierto
+## Demos — Trabajos personalizados de muestra
+
+> Proyectos armados para mostrar el producto a potenciales clientes. No son clientes activos.
+
+### ✂️ [barberia-cobran](https://barberia-cobran.vercel.app)
+Demo de sistema de **reservas online** para barbería. Booking sin login, panel admin.
+`Next.js 16` · `Prisma 7` · `Neon` · `NextAuth v5`
+
+### 🍕 [focaccia-delivery](https://github.com/Carloolivera/focaccia-delivery)
+Demo de sistema de **delivery** para pizzería con carrito, panel admin y WhatsApp.
+`Next.js 16` · `Prisma 7` · `Zustand` · `shadcn/ui`
 
 ### 🗒️ [aido-todo](https://aido-todo.vercel.app) · [![CI](https://github.com/Carloolivera/aido-todo/actions/workflows/ci.yml/badge.svg)](https://github.com/Carloolivera/aido-todo/actions)
 Todo app con auth, dashboard con gráficos, dark mode y **40+ tests**.
 `Next.js 16` · `Prisma 7` · `Vitest` · `shadcn/ui`
-
-### 🍕 [focaccia-delivery](https://github.com/Carloolivera/focaccia-delivery)
-Sistema de delivery para pizzería con carrito, panel admin y **WhatsApp integration**.
-`Next.js 16` · `Prisma 7` · `Zustand` · `shadcn/ui`
 
 ---
 
