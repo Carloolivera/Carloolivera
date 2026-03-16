@@ -27,14 +27,14 @@ Construyo productos digitales reales para negocios locales usando **100% vibecod
 
 <div align="center">
 
-| Motor | Herramienta | IA |
-|:-:|:-:|:-:|
-| 🥇 **Principal** | <img src="https://img.shields.io/badge/Claude_Code-CC785C?style=flat-square&logo=anthropic&logoColor=white" /> | Claude Sonnet/Opus |
-| 🥈 **Secundario** | <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" /> | Claude + Gemini 2.5 Pro |
+| Motor | Herramienta | IA | Uso |
+|:-:|:-:|:-:|:-:|
+| 🥇 **Principal** | <img src="https://img.shields.io/badge/Claude_Code-CC785C?style=flat-square&logo=anthropic&logoColor=white" /> | Claude Sonnet / Opus | El 95% del trabajo |
+| 🥈 **Backup** | <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" /> | Gemini 3.1 Pro | Solo si Claude no puede |
 
 </div>
 
-Dos motores, un objetivo: **shippear rápido sin tocar código**.
+Claude está **muy por encima**. Antigravity con Gemini 3.1 Pro es último recurso.
 
 ---
 
