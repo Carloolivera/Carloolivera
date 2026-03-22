@@ -66,9 +66,17 @@ Checkout → pago → email con QR → escaneo en puerta. Todo automatizado.
 `Next.js 16` · `Prisma 7` · `Neon` · `MercadoPago` · `Resend`
 
 ### 📅 aido — [turnos.aidoagencia.com](https://turnos.aidoagencia.com)
-Plataforma de **gestión de turnos gratis** para negocios locales.
+Plataforma de **gestión de turnos** para negocios locales.
 Panel completo: servicios, horarios, agenda, booking público. Cada negocio tiene su URL personalizada.
 `Next.js 16` · `Prisma 7` · `Neon` · `NextAuth v5`
+
+### 🛍️ aido-ecommerce — [aido-ecommerce.vercel.app](https://aido-ecommerce.vercel.app)
+Solución de **tienda online completa** para negocios locales. Catálogo, carrito, checkout y pagos con Mercado Pago.
+`Next.js 16` · `shadcn/ui` · `MercadoPago`
+
+### 🍽️ aido-menu — [aido-menu.vercel.app](https://aido-menu.vercel.app)
+**Menú digital** para restaurantes. Carta online con categorías, imágenes y pedidos.
+`Laravel 12` · `MySQL`
 
 ### 🤸 calistenia-chascomus — [calistenia-chascomus.vercel.app](https://calistenia-chascomus.vercel.app)
 App de gestión **a medida** para Calistenia Chascomús (Agus Acosta). Panel coach, skill trees, booking público y cobros con Mercado Pago.
@@ -88,7 +96,7 @@ MVP de reservas **multi-vertical**: estética, spa, odonto, fitness, tatuajes.
 Demo de sistema de **reservas online** para barbería. Booking sin login, panel admin, gestión de cobros.
 `Next.js 16` · `Prisma 7` · `Neon` · `NextAuth v5`
 
-### 🍕 [focaccia-delivery](https://github.com/Carloolivera/focaccia-delivery)
+### 🍕 [focaccia-delivery](https://focaccia-delivery.vercel.app)
 Demo de sistema de **delivery** para pizzería con carrito, panel admin y WhatsApp.
 `Next.js 16` · `Prisma 7` · `Zustand` · `shadcn/ui`
 
