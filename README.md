@@ -2,9 +2,9 @@
 
 # Carlo Olivera
 
-### `vibecoder` · fullstack dev · AI-native builder
+### `vibecoder fullstack` · orquestador de IA · co-founder AIDO
 
-*No escribo código. Le digo a la IA qué construir y lo shippeo.*
+*No soy programador — orquesto la IA desde la idea hasta producción.*
 
 [![Website](https://img.shields.io/badge/aidoagencia.com-000?style=for-the-badge&logo=vercel&logoColor=white)](https://aidoagencia.com)
 [![GitHub](https://img.shields.io/badge/GitHub-Carloolivera-181717?style=for-the-badge&logo=github)](https://github.com/Carloolivera)
@@ -17,24 +17,26 @@
 
 Soy co-founder de **AIDO Digital Agency** desde Chascomús, Buenos Aires.
 
-Construyo productos digitales reales para negocios locales usando **100% vibecoding** - la IA escribe, yo dirijo. Sin escribir código manual.
+**Técnico en Informática Personal y Profesional** egresado de la EEST N°1 de Chascomús.
+Actualmente cursando **2do año de la Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial** en el IFD y T N°57 "Juana Paula Manso".
 
-> *"El mejor código es el que no escribís vos."*
+No escribo código manualmente — **dirijo a Claude** para construir productos digitales completos: arquitectura, base de datos, lógica de negocio, UI, pagos, deploy. Todo el proyecto de principio a fin.
+
+> *"El valor no está en escribir código. Está en saber qué construir y cómo hacerlo funcionar."*
 
 ---
 
-## Cómo desarrollo
+## Herramienta de desarrollo
 
 <div align="center">
 
-| Motor | Herramienta | IA | Uso |
-|:-:|:-:|:-:|:-:|
-| 🥇 **Principal** | <img src="https://img.shields.io/badge/Claude_Code-CC785C?style=flat-square&logo=anthropic&logoColor=white" /> | Claude Sonnet / Opus | El 95% del trabajo |
-| 🔄 **Backup** | <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" /> | Gemini 2.5 Pro | Solo si Claude no puede |
+![Claude Code](https://img.shields.io/badge/Claude_Code-CC785C?style=for-the-badge&logo=anthropic&logoColor=white)
+![Claude Sonnet](https://img.shields.io/badge/Claude_Sonnet_4.6-CC785C?style=flat-square&logo=anthropic&logoColor=white)
+![Claude Opus](https://img.shields.io/badge/Claude_Opus_4.6-8B4513?style=flat-square&logo=anthropic&logoColor=white)
+
+**El 100% del desarrollo es con Claude Code.**
 
 </div>
-
-Claude está **muy por encima**. Antigravity es último recurso.
 
 ---
 
@@ -58,33 +60,42 @@ Claude está **muy por encima**. Antigravity es último recurso.
 
 ## Productos en producción
 
-> Todo construido con vibecoding. Cero código escrito manualmente.
+> Construidos con Claude Code. Desplegados y funcionando para clientes reales.
+
+### 🏋️ CaliFit — SaaS de gestión para estudios de calistenia
+Plataforma **multi-tenant** para gimnasios y estudios: gestión de alumnos, skill trees, clases, pagos con Mercado Pago y panel coach.
+`Next.js 16` · `Prisma 7` · `Neon` · `MercadoPago` · `TypeScript`
+
+### 🤸 calistenia-chascomus — [calistenia-chascomus.vercel.app](https://calistenia-chascomus.vercel.app)
+Instancia real de CaliFit para **Agus Acosta** (Calistenia Chascomús). **130+ alumnos activos**.
+Panel coach, booking público, skill trees y cobros con Mercado Pago.
+`Next.js 16` · `Prisma 7` · `Neon` · `MercadoPago`
 
 ### 🎟️ aido-tickets — [aido-tickets.vercel.app](https://aido-tickets.vercel.app)
 Venta de entradas para eventos con **QR + pagos con Mercado Pago + scanner**.
 Checkout → pago → email con QR → escaneo en puerta. Todo automatizado.
 `Next.js 16` · `Prisma 7` · `Neon` · `MercadoPago` · `Resend`
 
+### 🗓️ aido-turnos-mvp — [Railway](https://aido-turnos-web-production.up.railway.app)
+Plataforma de **reservas multi-vertical**: estética, spa, odonto, fitness, tatuajes.
+Panel completo, booking público por negocio, gestión de servicios y horarios.
+`Laravel 12` · `Livewire 4` · `Volt` · `Railway`
+
 ### 📅 aido — [turnos.aidoagencia.com](https://turnos.aidoagencia.com)
-Plataforma de **gestión de turnos** para negocios locales.
-Panel completo: servicios, horarios, agenda, booking público. Cada negocio tiene su URL personalizada.
+Sistema de **gestión de turnos** para profesionales. Panel completo: servicios, agenda y booking con URL personalizada por negocio.
 `Next.js 16` · `Prisma 7` · `Neon` · `NextAuth v5`
 
 ### 🛍️ aido-ecommerce — [aido-ecommerce.vercel.app](https://aido-ecommerce.vercel.app)
-Solución de **tienda online completa** para negocios locales. Catálogo, carrito, checkout y pagos con Mercado Pago.
+**Tienda online completa** para negocios locales. Catálogo, carrito, checkout y pagos con Mercado Pago.
 `Next.js 16` · `shadcn/ui` · `MercadoPago`
 
 ### 🍽️ aido-menu — [aido-menu.vercel.app](https://aido-menu.vercel.app)
 **Menú digital** para restaurantes. Carta online con categorías, imágenes y pedidos.
 `Laravel 12` · `MySQL`
 
-### 🤸 calistenia-chascomus — [calistenia-chascomus.vercel.app](https://calistenia-chascomus.vercel.app)
-App de gestión **a medida** para Calistenia Chascomús (Agus Acosta). Panel coach, skill trees, booking público y cobros con Mercado Pago.
-`Next.js 16` · `Prisma 7` · `Neon` · `MercadoPago`
-
-### 🗓️ aido-turnos-mvp — [Railway](https://aido-turnos-web-production.up.railway.app)
-MVP de reservas **multi-vertical**: estética, spa, odonto, fitness, tatuajes.
-`Laravel 12` · `Livewire 4` · `Volt` · `Railway`
+### 🌐 aidoagencia.com — [aidoagencia.com](https://aidoagencia.com)
+Web de **AIDO Digital Agency** con animaciones GSAP y diseño full custom.
+`Laravel 12` · `Livewire` · `GSAP` · `Tailwind CSS`
 
 ---
 
@@ -93,11 +104,11 @@ MVP de reservas **multi-vertical**: estética, spa, odonto, fitness, tatuajes.
 > Proyectos armados para mostrar el producto a potenciales clientes.
 
 ### 💈 [barberia-cobran](https://barberia-cobran.vercel.app)
-Demo de sistema de **reservas online** para barbería. Booking sin login, panel admin, gestión de cobros.
+Demo de **reservas online** para barbería. Booking sin login, panel admin, gestión de cobros.
 `Next.js 16` · `Prisma 7` · `Neon` · `NextAuth v5`
 
 ### 🍕 [focaccia-delivery](https://focaccia-delivery.vercel.app)
-Demo de sistema de **delivery** para pizzería con carrito, panel admin y WhatsApp.
+Demo de **delivery** para pizzería con carrito, panel admin y WhatsApp.
 `Next.js 16` · `Prisma 7` · `Zustand` · `shadcn/ui`
 
 ### ✅ [aido-todo](https://aido-todo.vercel.app) · [![CI](https://github.com/Carloolivera/aido-todo/actions/workflows/ci.yml/badge.svg)](https://github.com/Carloolivera/aido-todo/actions)
