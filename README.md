@@ -18,11 +18,20 @@
 Soy co-founder de **AIDO Digital Agency** desde Chascomús, Buenos Aires.
 
 **Técnico en Informática Personal y Profesional** egresado de la EEST N°1 de Chascomús.
-Actualmente cursando **2do año de la Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial** en el IFD y T N°57 "Juana Paula Manso".
+Cursando **Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial** en el IFD y T N°57 "Juana Paula Manso".
 
 No escribo código manualmente — **dirijo a Claude** para construir productos digitales completos: arquitectura, base de datos, lógica de negocio, UI, pagos, deploy. Todo el proyecto de principio a fin.
 
 > *"El valor no está en escribir código. Está en saber qué construir y cómo hacerlo funcionar."*
+
+---
+
+## 🔨 Construyendo ahora
+
+### 🏢 AIDO Studio — *primer SaaS de AIDO*
+Plataforma **multi-tenant** para estudios de fitness, calistenia, yoga y deportes en general.
+Gestión de alumnos, skill trees, clases, pagos con Mercado Pago y panel coach — todo en uno.
+`Next.js 16` · `React 19` · `Prisma 7` · `Neon` · `NextAuth v5` · `MercadoPago` · `TypeScript`
 
 ---
 
@@ -62,12 +71,8 @@ No escribo código manualmente — **dirijo a Claude** para construir productos 
 
 > Construidos con Claude Code. Desplegados y funcionando para clientes reales.
 
-### 🏋️ CaliFit — SaaS de gestión para estudios de calistenia
-Plataforma **multi-tenant** para gimnasios y estudios: gestión de alumnos, skill trees, clases, pagos con Mercado Pago y panel coach.
-`Next.js 16` · `Prisma 7` · `Neon` · `MercadoPago` · `TypeScript`
-
 ### 🤸 calistenia-chascomus — [calistenia-chascomus.vercel.app](https://calistenia-chascomus.vercel.app)
-Instancia real de CaliFit para **Agus Acosta** (Calistenia Chascomús). **130+ alumnos activos**.
+Instancia real para **Agus Acosta** (Calistenia Chascomús). **130+ alumnos activos.**
 Panel coach, booking público, skill trees y cobros con Mercado Pago.
 `Next.js 16` · `Prisma 7` · `Neon` · `MercadoPago`
 
@@ -137,6 +142,6 @@ Chascomús, Buenos Aires · 🌐 [aidoagencia.com](https://aidoagencia.com)
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Carloolivera&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9)
 
-![Streak](https://github-readme-streak-stats.herokuapp.com/?user=Carloolivera&theme=radical&hide_border=true&background=0d1117&ring=58a6ff&fire=f97583&currStreakLabel=58a6ff)
+[![GitHub Streak](https://streak-stats.demolab.com?user=Carloolivera&theme=radical&hide_border=true&background=0d1117&ring=58a6ff&fire=f97583&currStreakLabel=58a6ff)](https://git.io/streak-stats)
 
 </div>
