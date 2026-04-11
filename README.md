@@ -81,11 +81,6 @@ Venta de entradas para eventos con **QR + pagos con Mercado Pago + scanner**.
 Checkout → pago → email con QR → escaneo en puerta. Todo automatizado.
 `Next.js 16` · `Prisma 7` · `Neon` · `MercadoPago` · `Resend`
 
-### 🗓️ aido-turnos-mvp — [Railway](https://aido-turnos-web-production.up.railway.app)
-Plataforma de **reservas multi-vertical**: estética, spa, odonto, fitness, tatuajes.
-Panel completo, booking público por negocio, gestión de servicios y horarios.
-`Laravel 12` · `Livewire 4` · `Volt` · `Railway`
-
 ### 📅 aido — [turnos.aidoagencia.com](https://turnos.aidoagencia.com)
 Sistema de **gestión de turnos** para profesionales. Panel completo: servicios, agenda y booking con URL personalizada por negocio.
 `Next.js 16` · `Prisma 7` · `Neon` · `NextAuth v5`
