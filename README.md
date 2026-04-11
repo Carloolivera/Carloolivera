@@ -26,12 +26,65 @@ No escribo código manualmente — **dirijo a Claude** para construir productos 
 
 ---
 
-## 🔨 Construyendo ahora
+## 🔨 Construyendo ahora — AIDO Studio
 
-### 🏢 AIDO Studio — *primer SaaS de AIDO*
-Plataforma **multi-tenant** para estudios de fitness, calistenia, yoga y deportes en general.
-Gestión de alumnos, skill trees, clases, pagos con Mercado Pago y panel coach — todo en uno.
-`Next.js 16` · `React 19` · `Prisma 7` · `Neon` · `NextAuth v5` · `MercadoPago` · `TypeScript`
+Primer SaaS de AIDO: plataforma **multi-tenant** para estudios de fitness, calistenia, yoga y deportes.
+Cada estudio tiene su propio panel, alumnos, pagos y configuración. Un solo producto, N clientes.
+
+`Next.js 16` · `React 19` · `Prisma 7` · `Neon` · `NextAuth v5` · `MercadoPago` · `Upstash` · `Resend`
+
+### Arquitectura multi-tenant
+
+```
+                        aido-studio.vercel.app
+                               │
+              ┌────────────────┼────────────────┐
+              │                │                │
+       /onboarding      /{slug}/coach     /{slug}/booking
+    (registro tenant)   (panel privado)   (página pública)
+              │                │                │
+              └────────────────┼────────────────┘
+                               │
+                    Next.js App Router
+                    middleware → resuelve tenant por slug
+                               │
+                    ┌──────────┴──────────┐
+                    │                     │
+              Server Actions         Route Handlers
+              (mutations)            (/api/webhooks/mp)
+                    │                     │
+                    └──────────┬──────────┘
+                               │ Prisma 7
+                    ┌──────────▼──────────┐
+                    │   Neon PostgreSQL   │
+                    │  (tenant isolation  │
+                    │   por organizationId│
+                    │   — shared DB)      │
+                    └─────────────────────┘
+```
+
+### Decisiones de diseño
+
+| Decisión | Elección | Por qué |
+|----------|----------|---------|
+| Aislamiento de tenants | Shared DB + `organizationId` en cada tabla | Costo operativo mínimo en etapa early. Migrar a DB-per-tenant si escala |
+| Routing de tenants | Slug en path (`/{slug}/...`) | Evita configuración DNS por cliente. Más simple para onboarding |
+| Roles | `OWNER` / `COACH` / `STUDENT` por organización | Un usuario puede ser coach en un studio y alumno en otro |
+| Pagos | MP por tenant con credenciales propias | Cada estudio cobra directamente a sus alumnos |
+| Rate limiting | Upstash Redis | Serverless-compatible, sin conexiones persistentes |
+| Sesiones | JWT (NextAuth v5) | Stateless — escala sin sesiones en DB |
+
+### Modelo de datos (simplificado)
+
+```
+Organization (tenant)
+  ├── User ──< Membership (role: OWNER/COACH/STUDENT)
+  ├── SkillTree ──< SkillNode ──< StudentProgress
+  ├── Class ──< ClassEnrollment
+  └── Subscription (plan del estudio en AIDO Studio)
+          │
+          └── Payment (Mercado Pago)
+```
 
 ---
 
@@ -87,7 +140,7 @@ Sistema de **gestión de turnos** para profesionales. Panel completo: servicios,
 
 ### 🛍️ aido-ecommerce — [aido-ecommerce.vercel.app](https://aido-ecommerce.vercel.app)
 **Tienda online completa** para negocios locales. Catálogo, carrito, checkout y pagos con Mercado Pago.
-`Next.js 16` · `shadcn/ui` · `MercadoPago`
+`Next.js 16` · `shadcn/ui` · `MercadoPago` · [ver arquitectura →](https://github.com/Carloolivera/aido-ecommerce)
 
 ### 🍽️ aido-menu — [aido-menu.vercel.app](https://aido-menu.vercel.app)
 **Menú digital** para restaurantes. Carta online con categorías, imágenes y pedidos.
