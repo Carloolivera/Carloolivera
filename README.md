@@ -26,6 +26,19 @@ No escribo código manualmente — **dirijo a Claude** para construir productos 
 
 ---
 
+## Cómo trabajo
+
+Cuando digo "orquestador de IA", esto es lo que hago concretamente:
+
+1. **Defino la arquitectura** — stack, modelo de datos, decisiones de diseño con sus trade-offs
+2. **Especifico cada feature** — contexto del problema, restricciones técnicas, criterios de aceptación
+3. **Reviso todo el código generado** — contra criterios de seguridad, performance y mantenibilidad
+4. **Hago el deploy** — CI/CD, variables de entorno, monitoreo en producción
+
+Claude Code escribe el código. Yo decido qué construir, cómo, y si está bien hecho.
+
+---
+
 ## 🔨 Construyendo ahora — AIDO Studio
 
 Primer SaaS de AIDO: plataforma **multi-tenant** para estudios de fitness, calistenia, yoga y deportes.
@@ -66,7 +79,7 @@ Cada estudio tiene su propio panel, alumnos, pagos y configuración. Un solo pro
 ### Decisiones de diseño
 
 | Decisión | Elección | Por qué |
-|----------|----------|---------|
+|----------|----------|---------| 
 | Aislamiento de tenants | Shared DB + `organizationId` en cada tabla | Costo operativo mínimo en etapa early. Migrar a DB-per-tenant si escala |
 | Routing de tenants | Slug en path (`/{slug}/...`) | Evita configuración DNS por cliente. Más simple para onboarding |
 | Roles | `OWNER` / `COACH` / `STUDENT` por organización | Un usuario puede ser coach en un studio y alumno en otro |
