@@ -120,6 +120,16 @@ Organization (tenant)
 
 ---
 
+## Casos de estudio
+
+> Cómo orquesto IA para resolver problemas reales. Con números, decisiones técnicas y contexto honesto.
+
+### 🤸 [Calistenia Chascomús — 130+ alumnos en 23 días](./case-studies/calistenia-chascomus.md)
+De WhatsApp caótico a plataforma con skill trees, booking y cobros con Mercado Pago.
+**23 días · 140 commits · A+ en seguridad · 130+ usuarios activos**
+
+---
+
 ## Productos en producción
 
 > Construidos con Claude Code. Desplegados y funcionando para clientes reales.
