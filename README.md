@@ -1,13 +1,13 @@
 <div align="center">
 
-# Carlo Olivera
+# Carlos Olivera
 
-### `vibecoder fullstack` · orquestador de IA · co-founder AIDO
+### Desarrollo web asistido por IA · fundador de AIDO · Chascomús, Argentina
 
-*No soy programador — orquesto la IA desde la idea hasta producción.*
+*No soy programador: dirijo a la IA desde la idea hasta que el sistema funciona en producción, y lo mantengo.*
 
-[![Website](https://img.shields.io/badge/aidoagencia.com-000?style=for-the-badge&logo=vercel&logoColor=white)](https://aidoagencia.com)
-[![GitHub](https://img.shields.io/badge/GitHub-Carloolivera-181717?style=for-the-badge&logo=github)](https://github.com/Carloolivera)
+[![Web](https://img.shields.io/badge/aidoagenciaweb.com.ar-000?style=for-the-badge)](https://aidoagenciaweb.com.ar)
+[![Brooklyn Blade](https://img.shields.io/badge/En_producción-brooklynblade.com.ar-d71f28?style=for-the-badge)](https://brooklynblade.com.ar)
 
 </div>
 
@@ -15,204 +15,71 @@
 
 ## Sobre mí
 
-Soy co-founder de **AIDO Digital Agency** desde Chascomús, Buenos Aires.
+Técnico en **Informática Personal y Profesional** (E.E.S.T. N.º 1, Chascomús). Fundé **AIDO**, una agencia que ayuda
+a negocios locales a vender más y organizarse mejor con sistemas simples, webs y contenido.
 
-**Técnico en Informática Personal y Profesional** egresado de la EEST N°1 de Chascomús.
-Cursando **Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial** en el IFD y T N°57 "Juana Paula Manso".
-
-No escribo código manualmente — **dirijo a Claude** para construir productos digitales completos: arquitectura, base de datos, lógica de negocio, UI, pagos, deploy. Todo el proyecto de principio a fin.
-
-> *"El valor no está en escribir código. Está en saber qué construir y cómo hacerlo funcionar."*
-
----
+No escribo código a mano. Trabajo con **Claude Code**: yo decido qué hay que resolver y cómo se tiene que comportar
+el sistema, la IA escribe el código, y yo compruebo que funcione —con pruebas automáticas, revisiones de seguridad
+y el sistema andando en el navegador y en el teléfono— antes de darlo por terminado.
 
 ## Cómo trabajo
 
-Cuando digo "orquestador de IA", esto es lo que hago concretamente:
-
-1. **Defino la arquitectura** — stack, modelo de datos, decisiones de diseño con sus trade-offs
-2. **Especifico cada feature** — contexto del problema, restricciones técnicas, criterios de aceptación
-3. **Reviso todo el código generado** — contra criterios de seguridad, performance y mantenibilidad
-4. **Hago el deploy** — CI/CD, variables de entorno, monitoreo en producción
-
-Claude Code escribe el código. Yo decido qué construir, cómo, y si está bien hecho.
+1. **Entiendo el problema del negocio**: qué le traba el día a día y qué tiene que poder hacer el sistema.
+2. **Lo parto en pasos chicos**: una rama de Git por cambio y pull request para unirlo.
+3. **Lo compruebo**: pruebas automáticas, revisores automáticos de calidad y seguridad desde varios puntos de vista, y el sistema funcionando de verdad.
+4. **Lo publico y lo mantengo**: servidor propio con Docker, HTTPS y copias de seguridad; dominio, Google Business Profile, Bing y Meta Business Suite.
 
 ---
 
-## 🔨 Construyendo ahora — AIDO Studio
+## Cómo fuimos evolucionando
 
-Primer SaaS de AIDO: plataforma **multi-tenant** para estudios de fitness, calistenia, yoga y deportes.
-Cada estudio tiene su propio panel, alumnos, pagos y configuración. Un solo producto, N clientes.
-
-`Next.js 16` · `React 19` · `Prisma 7` · `Neon` · `NextAuth v5` · `MercadoPago` · `Upstash` · `Resend`
-
-### Arquitectura multi-tenant
-
-```
-                        aido-studio.vercel.app
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-       /onboarding      /{slug}/coach     /{slug}/booking
-    (registro tenant)   (panel privado)   (página pública)
-              │                │                │
-              └────────────────┼────────────────┘
-                               │
-                    Next.js App Router
-                    middleware → resuelve tenant por slug
-                               │
-                    ┌──────────┴──────────┐
-                    │                     │
-              Server Actions         Route Handlers
-              (mutations)            (/api/webhooks/mp)
-                    │                     │
-                    └──────────┬──────────┘
-                               │ Prisma 7
-                    ┌──────────▼──────────┐
-                    │   Neon PostgreSQL   │
-                    │  (tenant isolation  │
-                    │   por organizationId│
-                    │   — shared DB)      │
-                    └─────────────────────┘
-```
-
-### Decisiones de diseño
-
-| Decisión | Elección | Por qué |
-|----------|----------|---------| 
-| Aislamiento de tenants | Shared DB + `organizationId` en cada tabla | Costo operativo mínimo en etapa early. Migrar a DB-per-tenant si escala |
-| Routing de tenants | Slug en path (`/{slug}/...`) | Evita configuración DNS por cliente. Más simple para onboarding |
-| Roles | `OWNER` / `COACH` / `STUDENT` por organización | Un usuario puede ser coach en un studio y alumno en otro |
-| Pagos | MP por tenant con credenciales propias | Cada estudio cobra directamente a sus alumnos |
-| Rate limiting | Upstash Redis | Serverless-compatible, sin conexiones persistentes |
-| Sesiones | JWT (NextAuth v5) | Stateless — escala sin sesiones en DB |
-
-### Modelo de datos (simplificado)
-
-```
-Organization (tenant)
-  ├── User ──< Membership (role: OWNER/COACH/STUDENT)
-  ├── SkillTree ──< SkillNode ──< StudentProgress
-  ├── Class ──< ClassEnrollment
-  └── Subscription (plan del estudio en AIDO Studio)
-          │
-          └── Payment (Mercado Pago)
-```
+| Cuándo | Qué | Con qué | Qué aprendí |
+|---|---|---|---|
+| **2024** | Primera web de la agencia, [aidoagencia.com](https://aidoagencia.com) — la hizo mi ex socio; ahí conocí el ecosistema PHP | Laravel, Livewire, particles.js, Tailwind, Cloudflare, Hostinger | Cómo se publica una web en un hosting compartido |
+| **feb–mar 2026** | Demos y primeros productos: turnos, tienda, entradas, delivery | Next.js, Prisma, PostgreSQL (Neon), Vercel | Ir de la idea a algo funcionando en días |
+| **mar–abr 2026** | [Calistenia Chascomús](./case-studies/calistenia-chascomus.md): 130+ alumnos en 23 días | Next.js, PostgreSQL | Un cliente real que lo usa todos los días |
+| **abr–may 2026** | Sistema de socios y cuotas para un club, en **Laravel** — y el mismo sistema rehecho en **.NET** | PHP 8.3, Laravel 12, Filament 4, MySQL · C# / .NET | Que el lenguaje cambia; el orden y las pruebas no |
+| **may–jun 2026** | Webs de comercios: Central de Service (SEO 100 en Lighthouse) | HTML/CSS sin dependencias | Rápido y simple gana en una web de oficio |
+| **jun 2026 →** | **Fábrica de contenido**: reels, motion graphics, logos animados, imágenes y video con IA | Remotion, CapCut, Google Flow, Blender, FFmpeg, Python | Cada tipo de pieza con su receta medida y un verificador que dice que no |
+| **oct–nov 2026** | **Brooklyn Blade**: turnos de una barbería, en uso diario con datos reales | Next.js, TypeScript, PostgreSQL, Docker, servidor propio | 61 pull requests, ~545 pruebas, CI, copias cifradas |
+| **nov 2026** | Servidor propio de AIDO para clientes; buscadores (Google, Bing, IndexNow) | Ubuntu, Docker, Traefik | Que el cliente sea dueño de sus cuentas y sus datos |
 
 ---
 
-## Herramienta de desarrollo
+## Proyectos
 
-<div align="center">
+### 💈 Brooklyn Blade — turnos en uso diario · [brooklynblade.com.ar](https://brooklynblade.com.ar)
+Reservas online y panel para dos barberos, con datos reales todos los días.
+**61 pull requests · unas 545 pruebas automáticas · integración continua · servidor propio con Docker y copias cifradas.**
+Tres revisiones independientes (calidad, seguridad y TypeScript) no encontraron fallas críticas.
+`Next.js` · `TypeScript` · `PostgreSQL` · `Docker` — *el código es del cliente, por eso no es público.*
 
-![Claude Code](https://img.shields.io/badge/Claude_Code-CC785C?style=for-the-badge&logo=anthropic&logoColor=white)
-![Claude Sonnet](https://img.shields.io/badge/Claude_Sonnet_4.6-CC785C?style=flat-square&logo=anthropic&logoColor=white)
-![Claude Opus](https://img.shields.io/badge/Claude_Opus_4.6-8B4513?style=flat-square&logo=anthropic&logoColor=white)
+### ⚽ Club Rojo Deportivo — socios y cuotas en Laravel · demo
+Socios, cuotas, reportes en PDF y Excel, portal donde el socio consulta su cuota con el DNI, y web en
+**español, inglés y portugués** con un escudo en 3D. Nació como sistema real para un club; la demo tiene marca y datos ficticios.
+**317 pruebas automáticas · revisión de seguridad y auditoría de dependencias antes de publicar.**
+`PHP 8.3` · `Laravel 12` · `Filament 4` · `MySQL` · `three.js` · `GSAP` · `Docker`
 
-**El 100% del desarrollo es con Claude Code.**
+### 🤸 Calistenia Chascomús · [calistenia-chascomus.vercel.app](https://calistenia-chascomus.vercel.app)
+De WhatsApp desordenado a plataforma con reservas y progreso de cada alumno. [Caso de estudio →](./case-studies/calistenia-chascomus.md)
+`Next.js` · `PostgreSQL`
 
-</div>
+### 📅 Turnos para profesionales · [turnos.aidoagencia.com](https://turnos.aidoagencia.com)
+Servicios, agenda y reservas con dirección propia para cada negocio.
+`Next.js` · `PostgreSQL`
 
----
+### 🔧 Webs y presencia de comercios locales
+- **Central de Service** (service de calefones): SEO 100 y rendimiento 91 en Lighthouse, medido en producción.
+- **Pampasuyu** (impresión 3D): web, alta en Bing e IndexNow.
+- **La Nota Music Store**: en curso.
 
-## Stack
-
-<div align="center">
-
-![Next.js](https://img.shields.io/badge/Next.js_16-000?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel_12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma_7-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000?style=for-the-badge&logo=vercel&logoColor=white)
-![MercadoPago](https://img.shields.io/badge/Mercado_Pago-00B1EA?style=for-the-badge&logo=mercadopago&logoColor=white)
-
-</div>
-
----
-
-## Casos de estudio
-
-> Cómo orquesto IA para resolver problemas reales. Con números, decisiones técnicas y contexto honesto.
-
-### 🤸 [Calistenia Chascomús — 130+ alumnos en 23 días](./case-studies/calistenia-chascomus.md)
-De WhatsApp caótico a plataforma con skill trees, booking y cobros con Mercado Pago.
-**23 días · 140 commits · A+ en seguridad · 130+ usuarios activos**
+### 🎬 Contenido
+Reels, motion graphics y logos animados para clientes y para AIDO, producidos por script y medidos contra referencias:
+`Remotion` · `CapCut` · `Google Flow` (imagen y video con IA) · `Blender` · `FFmpeg` · `Whisper`
 
 ---
 
-## Productos en producción
+## Con qué trabajo
 
-> Construidos con Claude Code. Desplegados y funcionando para clientes reales.
-
-### 🤸 calistenia-chascomus — [calistenia-chascomus.vercel.app](https://calistenia-chascomus.vercel.app)
-Instancia real para **Agus Acosta** (Calistenia Chascomús). **130+ alumnos activos.**
-Panel coach, booking público, skill trees y cobros con Mercado Pago.
-`Next.js 16` · `Prisma 7` · `Neon` · `MercadoPago`
-
-### 🎟️ aido-tickets — [aido-tickets.vercel.app](https://aido-tickets.vercel.app)
-Venta de entradas para eventos con **QR + pagos con Mercado Pago + scanner**.
-Checkout → pago → email con QR → escaneo en puerta. Todo automatizado.
-`Next.js 16` · `Prisma 7` · `Neon` · `MercadoPago` · `Resend`
-
-### 📅 aido — [turnos.aidoagencia.com](https://turnos.aidoagencia.com)
-Sistema de **gestión de turnos** para profesionales. Panel completo: servicios, agenda y booking con URL personalizada por negocio.
-`Next.js 16` · `Prisma 7` · `Neon` · `NextAuth v5`
-
-### 🛍️ aido-ecommerce — [aido-ecommerce.vercel.app](https://aido-ecommerce.vercel.app)
-**Tienda online completa** para negocios locales. Catálogo, carrito, checkout y pagos con Mercado Pago.
-`Next.js 16` · `shadcn/ui` · `MercadoPago` · [ver arquitectura →](https://github.com/Carloolivera/aido-ecommerce)
-
-### 🍽️ aido-menu — [aido-menu.vercel.app](https://aido-menu.vercel.app)
-**Menú digital** para restaurantes. Carta online con categorías, imágenes y pedidos.
-`Laravel 12` · `MySQL`
-
-### 🌐 aidoagencia.com — [aidoagencia.com](https://aidoagencia.com)
-Web de **AIDO Digital Agency** con animaciones GSAP y diseño full custom.
-`Laravel 12` · `Livewire` · `GSAP` · `Tailwind CSS`
-
----
-
-## Demos — Trabajos personalizados de muestra
-
-> Proyectos armados para mostrar el producto a potenciales clientes.
-
-### 💈 [barberia-cobran](https://barberia-cobran.vercel.app)
-Demo de **reservas online** para barbería. Booking sin login, panel admin, gestión de cobros.
-`Next.js 16` · `Prisma 7` · `Neon` · `NextAuth v5`
-
-### 🍕 [focaccia-delivery](https://focaccia-delivery.vercel.app)
-Demo de **delivery** para pizzería con carrito, panel admin y WhatsApp.
-`Next.js 16` · `Prisma 7` · `Zustand` · `shadcn/ui`
-
-### ✅ [aido-todo](https://aido-todo.vercel.app) · [![CI](https://github.com/Carloolivera/aido-todo/actions/workflows/ci.yml/badge.svg)](https://github.com/Carloolivera/aido-todo/actions)
-Todo app con auth, dashboard con gráficos, dark mode y **40+ tests**.
-`Next.js 16` · `Prisma 7` · `Vitest` · `shadcn/ui`
-
----
-
-## AIDO Digital Agency
-
-<div align="center">
-
-**Software product factory para negocios locales.**
-
-Menú digital · Turnos online · E-commerce · Venta de entradas · Landing pages
-
-Chascomús, Buenos Aires · 🌐 [aidoagencia.com](https://aidoagencia.com)
-
-</div>
-
----
-
-<div align="center">
-
-![Carlo's GitHub stats](https://github-readme-stats.vercel.app/api?username=Carloolivera&show_icons=true&theme=radical&hide_border=true&count_private=true&bg_color=0d1117&title_color=58a6ff&icon_color=f97583&text_color=c9d1d9)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Carloolivera&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9)
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=Carloolivera&theme=radical&hide_border=true&background=0d1117&ring=58a6ff&fire=f97583&currStreakLabel=58a6ff)](https://git.io/streak-stats)
-
-</div>
+`Claude Code` · `PHP` · `Laravel` · `Filament` · `MySQL` · `Next.js` · `TypeScript` · `PostgreSQL` · `C# / .NET` ·
+`Pest` · `Vitest` · `Playwright` · `Docker` · `Linux` · `Git y GitHub` · `three.js` · `GSAP` · `Remotion` · `Python`
