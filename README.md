@@ -37,7 +37,7 @@ y el sistema andando en el navegador y en el teléfono— antes de darlo por ter
 |---|---|---|
 | **2025** | Primer año de la Tecnicatura en Ciencia de Datos e IA; vuelvo a programar, ahora con IA | Python, Claude Code |
 | **oct 2025** | Primer aviso ofreciendo páginas web, con un sistema de heladería hecho en PHP | PHP, CodeIgniter 4 |
-| **dic 2025** | Primera web de la agencia, [aidoagencia.com](https://aidoagencia.com) — la hizo mi ex socio; ahí conocí el ecosistema PHP | Laravel, Livewire, particles.js, Tailwind, Cloudflare, Hostinger |
+| **dic 2025** | Primera web de la agencia, [aidoagencia.com](https://aidoagencia.com) — la hizo mi ex socio, en Laravel | Laravel, Livewire, particles.js, Tailwind, Cloudflare, Hostinger |
 | **feb–mar 2026** | Demos y primeros productos: turnos, tienda, entradas, delivery | Next.js, Prisma, PostgreSQL, Vercel |
 | **mar–abr 2026** | Plataforma para un estudio de calistenia: reservas, panel del profesor y progreso de cada alumno. ~24 días de trabajo, con revisiones de seguridad. **El cliente finalmente no la adoptó**; el trabajo quedó hecho y es la base de un producto para gimnasios | Next.js, PostgreSQL |
 | **abr–may 2026** | Sistema de socios y cuotas para un club deportivo, hecho como favor, en **Laravel** — y el mismo sistema rehecho en **.NET** | PHP 8.3, Laravel 12, Filament 4, MySQL · C# / .NET |
