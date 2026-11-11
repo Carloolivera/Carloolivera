@@ -1,6 +1,6 @@
 # Caso de estudio — Calistenia Chascomús
 
-**De WhatsApp caótico a plataforma con 130+ alumnos en 23 días**
+**De WhatsApp caótico a una plataforma completa en 23 días, para un estudio de 130+ alumnos**
 
 > Construido 100% con Claude Code. Sin equipo de desarrollo. Sin experiencia previa en programación.
 
@@ -12,7 +12,7 @@
 |--|--|
 | ⏱ Tiempo de desarrollo | 23 días (16 mar → 8 abr 2026) |
 | 📦 Commits | 140 |
-| 👥 Alumnos activos | 130+ |
+| 👥 Alumnos del estudio | 130+ (la plataforma no llegó a usarse) |
 | 🔒 Score de seguridad | A+ (securityheaders.io) |
 | 🚀 Deploy | Vercel (producción continua) |
 | 💳 Pagos | Mercado Pago integrado |
@@ -107,7 +107,7 @@ Confirmaciones y recordatorios via Resend. Agus no tiene que hacer seguimiento m
 
 ## Resultado
 
-La plataforma está en producción desde el 8 de abril de 2026 con **130+ alumnos activos**.
+La plataforma quedó publicada el 8 de abril de 2026, pero **el estudio no la adoptó**: siguió con WhatsApp. El trabajo quedó hecho y hoy es la base de un producto genérico para gimnasios. Lección: un sistema terminado no sirve si el dueño no está decidido a cambiar cómo trabaja; desde entonces lo confirmamos antes de empezar.
 
 Agus pasó de gestionar todo por WhatsApp a tener un sistema profesional que:
 - Responde automáticamente cómo hacer cada ejercicio (skill trees)
